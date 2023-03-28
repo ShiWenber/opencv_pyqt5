@@ -6,6 +6,36 @@
 - [ ] 中点画线，中点画园
 - [ ] GUI工具
 
+---
+
+## 画线算法
+
+### DDA （digital differential analyzer）数字微分分析仪
+
+对于正斜率的线 (m为斜率)
+
+$$
+\begin{cases}
+y_{k + 1} = y_k + m \qquad \text{取样间隔为} \sigma x = 1 \quad if \quad m \le  1\\
+x_{k + 1} = x_k + \frac{1}{m} \qquad \text{取样间隔为} \sigma y = 1 \quad if \quad m > 1
+\end{cases}
+$$
+
+对于负斜率的线 (m为斜率)
+
+$$
+\begin{cases}
+y_{k + 1} = y_k - m \qquad \text{取样间隔为} \sigma x = 1 \quad if \quad m \ge  -1\\
+x_{k + 1} = x_k - \frac{1}{m} \qquad \text{取样间隔为} \sigma y = 1 \quad if \quad m < -1
+\end{cases}
+$$
+
+> 为什么总是取变化较小的方向做增量 （以方向变化小的方向作为步长）?
+>
+> 在浮点增量的连续迭加中，取整误差积累使得对于较长线段所计算的像素位置偏离实际线段。而且该过程中的取整操作和浮点运算仍然十分耗时。通过增量$m$和$\frac{1}{m}$可以将增量分离为整数和小数部分，所有计算都简化为整数操作，提升性能。
+
+---
+
 ### 光栅化-scan conversion process
 
 使用差分算法替代求导，可以提高效率。
