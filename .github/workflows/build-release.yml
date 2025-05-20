@@ -11,7 +11,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [windows-latest, ubuntu-latest, macos-latest]
+        os: [windows-latest]
         python-version: ['3.9']
 
     steps:
@@ -33,7 +33,7 @@ jobs:
         pyinstaller --onefile --windowed src/main.py  # Replace with your actual main script
     
     - name: Upload artifacts
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: ${{ matrix.os }}-binary
         path: dist/*
