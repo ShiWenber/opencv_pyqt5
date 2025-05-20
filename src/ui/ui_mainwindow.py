@@ -344,4 +344,4 @@ class Ui_MainWindow(object):
         self.actionopen_data_dir.setShortcut(_translate("MainWindow", "Ctrl+O"))
         self.actionsave.setText(_translate("MainWindow", "save"))
         self.actionsave.setShortcut(_translate("MainWindow", "Ctrl+S"))
-import icon_rc
+import ui.icon_rc
