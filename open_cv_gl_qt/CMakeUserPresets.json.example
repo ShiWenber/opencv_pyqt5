@@ -1,0 +1,33 @@
+{
+  "version": 2,
+  "configurePresets": [
+    {
+      "name": "default",
+      "inherits": "vcpkg",
+      "generator": "Visual Studio 17 2022",
+      "environment": {
+        "VCPKG_ROOT": "YOUR_VCPKG_PATH",
+        "VCPKG_DEFAULT_TRIPLET": "x64-windows",
+        "VCPKG_DEFAULT_HOST_TRIPLET": "x64-windows"
+      },
+      "cacheVariables": {
+        "CMAKE_C_COMPILER": "cl",
+        "CMAKE_CXX_COMPILER": "cl"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "Debug",
+      "description": "Build with debug information",
+      "displayName": "Debug Build",
+      "configurePreset": "default"
+    },
+    {
+      "name": "Release",
+      "description": "Build with optimizations", 
+      "displayName": "Release Build",
+      "configurePreset": "default"
+    }
+  ]
+}
