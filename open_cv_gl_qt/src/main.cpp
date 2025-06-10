@@ -1,57 +1,36 @@
-#include <GL/freeglut.h>
-#include <cmath>
-#include <corecrt_math_defines.h>
-#include "task1.h"
+// #include <GL/freeglut.h>
+// #include <cmath>
+// #include <corecrt_math_defines.h>
+// #include "../include/final.h"
 
-// Function to initialize OpenGL settings
-void initGL() {
-    // Set the background color to black
-    glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
-}
+// // Main function
+// int main(int argc, char** argv) {
+//     // Initialize the GLUT library
+//     glutInit(&argc, argv);
 
-// Function to handle the rendering of the scene
-void display() {
-    // Clear the color buffer
-    glClear(GL_COLOR_BUFFER_BIT);
+//     // Set the initial display mode for double buffering and depth
+//     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
 
-    // Set the drawing color to white
-    glColor3f(1.0f, 1.0f, 1.0f);
+//     // Set the initial window position and size
+//     glutInitWindowPosition(100, 100);
+//     glutInitWindowSize(800, 600);
 
-    // Draw a rectangle
-    glBegin(GL_QUADS);
-        glVertex2f(-0.5f, -0.5f);
-        glVertex2f( 0.5f, -0.5f);
-        glVertex2f( 0.5f,  0.5f);
-        glVertex2f(-0.5f,  0.5f);
-    glEnd();
+//     // Create the window with the title "Crank-Slider Mechanism"
+//     glutCreateWindow("Crank-Slider Mechanism");
 
-    // Flush the OpenGL commands and make sure they get rendered
-    glFlush();
-}
+//     // Initialize OpenGL settings
+//     final::initCrankSliderGL();
 
-// Main function
-int main(int argc, char** argv) {
-    // Initialize the GLUT library
-    glutInit(&argc, argv);
+//     // Register the display callback function
+//     glutDisplayFunc(final::crankSliderAnimation);
+    
+//     // Register mouse and keyboard callbacks
+//     glutMouseFunc(final::crankMouse);
+//     glutSpecialFunc(final::crankKeyboard);
+//     glutKeyboardFunc(final::crankKeyboardRegular);
 
-    // Set the initial display mode
-    glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
+//     // Enter the GLUT event processing loop
+//     glutMainLoop();
 
-    // Set the initial window position and size
-    glutInitWindowPosition(100, 100);
-    glutInitWindowSize(500, 500);
-
-    // Create the window with the title "FreeGLUT Example"
-    glutCreateWindow("FreeGLUT Example");
-
-    // Initialize OpenGL settings
-    initGL();
-
-    // Register the display callback function
-    glutDisplayFunc(experiment5);  // 可以调用任何 experiment 函数
-
-    // Enter the GLUT event processing loop
-    glutMainLoop();
-
-    return 0;
-}
+//     return 0;
+// }

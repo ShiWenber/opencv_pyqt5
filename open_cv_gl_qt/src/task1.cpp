@@ -1,6 +1,9 @@
 #include <GL/freeglut.h>
 #include <cmath>
 #include <corecrt_math_defines.h>
+#include "../include/task1.h"  // 添加头文件引用
+
+namespace task1 {  // 添加命名空间
 
 /**
  * @brief 
@@ -194,3 +197,5 @@ void experiment5() {
 
     glFlush();
 }
+
+}  // 命名空间结束
